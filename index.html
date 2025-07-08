@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenWhale — AI Platform</title>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #222;
+            --accent-color: #222;
+            --pattern-color: rgba(0, 0, 0, 0.03);
+            --glass-bg: rgba(255, 255, 255, 0.9);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-align: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(var(--pattern-color) 1px, transparent 1px);
+            background-size: 20px 20px;
+            z-index: -1;
+        }
+
+        .header {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            right: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            z-index: 100;
+            padding: 12px 20px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .whale-logo {
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            padding: 6px 10px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .language-switcher:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .globe-icon {
+            width: 18px;
+            height: 18px;
+            opacity: 0.8;
+        }
+
+        .language-text {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .hero {
+            padding: 180px 30px 60px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .main-heading {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .subheading {
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 50px;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        .description {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 60px;
+            opacity: 0.9;
+        }
+
+        .features {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 30px 80px;
+        }
+
+        .features h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        .feature {
+            margin-bottom: 40px;
+        }
+
+        .feature h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .feature p {
+            font-size: 17px;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+
+        .coming-soon-container {
+            margin-top: 80px; /* Увеличенный отступ */
+        }
+
+        .coming-soon {
+            font-size: 24px;
+            font-weight: 600;
+            opacity: 0.9;
+            letter-spacing: 2px;
+        }
+
+        .hosted-by {
+            font-size: 14px;
+            opacity: 0.5;
+            margin-top: 10px;
+            font-weight: 600; /* Жирный шрифт вместо курсива */
+        }
+
+        .footer {
+            padding: 30px;
+            font-size: 14px;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <svg class="whale-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <g transform="rotate(45 100 100)">
+                    <rect x="30" y="30" width="40" height="40" fill="none" stroke="var(--accent-color)" stroke-width="2"/>
+                    <rect x="80" y="30" width="40" height="40" fill="var(--accent-color)" stroke="var(--accent-color)" stroke-width="2"/>
+                    <rect x="130" y="30" width="40" height="40" fill="none" stroke="var(--accent-color)" stroke-width="2"/>
+                    <rect x="30" y="80" width="40" height="40" fill="var(--accent-color)" stroke="var(--accent-color)" stroke-width="2"/>
+                    <rect x="80" y="80" width="40" height="40" fill="none" stroke="var(--accent-color)" stroke-width="2"/>
+                    <rect x="130" y="80" width="40" height="40" fill="var(--accent-color)" stroke="var(--accent-color)" stroke-width="2"/>
+                    <rect x="30" y="130" width="40" height="40" fill="none" stroke="var(--accent-color)" stroke-width="2"/>
+                    <rect x="80" y="130" width="40" height="40" fill="var(--accent-color)" stroke="var(--accent-color)" stroke-width="2"/>
+                    <rect x="130" y="130" width="40" height="40" fill="none" stroke="var(--accent-color)" stroke-width="2"/>
+                </g>
+            </svg>
+            <span class="title">OpenWhale</span>
+        </div>
+        
+        <div class="language-switcher" id="languageSwitcher">
+            <svg class="globe-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 12H22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="language-text">Eng</span>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1 class="main-heading" data-i18n="main_heading">Build Better with AI</h1>
+        <p class="subheading" data-i18n="subheading">The future of intelligent development tools</p>
+        <p class="description" data-i18n="description">
+            We noticed how inconvenient it is to constantly switch between different AI platforms.
+            OpenWhale solves this by bringing together all major AI models in one place -
+            with a unified interface that saves you time and simplifies your workflow.
+        </p>
+    </div>
+
+    <div class="features">
+        <h2 data-i18n="features_title">Why Choose OpenWhale?</h2>
+        
+        <div class="feature">
+            <h3 data-i18n="feature1_title">All-in-One Platform</h3>
+            <p data-i18n="feature1_text">Access multiple AI models through a single, intuitive interface.</p>
+        </div>
+        
+        <div class="feature">
+            <h3 data-i18n="feature2_title">Completely Free</h3>
+            <p data-i18n="feature2_text">Open access to advanced AI for everyone.</p>
+        </div>
+        
+        <div class="feature">
+            <h3 data-i18n="feature3_title">Global Access</h3>
+            <p data-i18n="feature3_text">Available worldwide with consistent performance and reliability.</p>
+        </div>
+
+        <div class="coming-soon-container">
+            <div class="coming-soon">Coming soon...</div>
+            <div class="hosted-by">Hosted by chadwy</div>
+        </div>
+    </div>
+
+    <div class="footer" data-i18n="footer">
+        © 2024 OpenWhale. All rights reserved.
+    </div>
+
+    <script>
+        // Переводы
+        const translations = {
+            en: {
+                "main_heading": "Build Better with AI",
+                "subheading": "The future of intelligent development tools",
+                "description": "We noticed how inconvenient it is to constantly switch between different AI platforms. OpenWhale solves this by bringing together all major AI models in one place - with a unified interface that saves you time and simplifies your workflow.",
+                "features_title": "Why Choose OpenWhale?",
+                "feature1_title": "All-in-One Platform",
+                "feature1_text": "Access multiple AI models through a single, intuitive interface.",
+                "feature2_title": "Completely Free",
+                "feature2_text": "Open access to advanced AI for everyone.",
+                "feature3_title": "Global Access",
+                "feature3_text": "Available worldwide with consistent performance and reliability.",
+                "footer": "© 2024 OpenWhale. All rights reserved."
+            },
+            ru: {
+                "main_heading": "Создавайте лучше с ИИ",
+                "subheading": "Будущее интеллектуальных инструментов разработки",
+                "description": "Мы заметили, насколько неудобно постоянно переключаться между разными ИИ-платформами. OpenWhale решает эту проблему, объединяя все основные модели ИИ в одном месте - с единым интерфейсом, который экономит ваше время и упрощает рабочий процесс.",
+                "features_title": "Почему OpenWhale?",
+                "feature1_title": "Все-в-Одном",
+                "feature1_text": "Доступ к нескольким моделям ИИ через единый интуитивный интерфейс.",
+                "feature2_title": "Полностью Бесплатно",
+                "feature2_text": "Открытый доступ к передовому ИИ для всех.",
+                "feature3_title": "Глобальный Доступ",
+                "feature3_text": "Доступно по всему миру с стабильной производительностью и надежностью.",
+                "footer": "© 2024 OpenWhale. Все права защищены."
+            }
+        };
+
+        // Функция перевода
+        function setLanguage(lang) {
+            document.querySelector('.language-text').textContent = lang === 'en' ? 'Eng' : 'Рус';
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+        }
+
+        // Переключение языка
+        document.getElementById('languageSwitcher').addEventListener('click', () => {
+            const currentLang = document.querySelector('.language-text').textContent === 'Eng' ? 'en' : 'ru';
+            const newLang = currentLang === 'en' ? 'ru' : 'en';
+            setLanguage(newLang);
+        });
+
+        // Инициализация языка
+        setLanguage('en');
+    </script>
+</body>
+</html>
